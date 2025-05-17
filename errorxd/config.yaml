@@ -1,0 +1,7 @@
+recetas:
+  path: ./recipes.json
+  autosave: true
+  categorias: [postre, entrada, principal]
+logging:
+  nivel: INFO
+  destino: consola
