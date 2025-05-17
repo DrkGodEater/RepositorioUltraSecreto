@@ -1,0 +1,19 @@
+El cifrado Vigenère es uno de los métodos clásicos más conocidos y estudiados dentro de la historia de la criptografía. Fue nombrado en honor a Blaise de Vigenère, aunque el método fue descrito por Giovan Battista Bellaso en 1553. A pesar de ello, el nombre de Vigenère se asoció al cifrado debido a un malentendido histórico. Durante siglos, el cifrado Vigenère fue considerado irrompible, y de hecho se le apodó el “cifrado indecifrable”.
+
+El funcionamiento del cifrado Vigenère se basa en una serie de cifrados César aplicados en secuencia, de acuerdo con las letras de una palabra clave. A diferencia del cifrado César, que utiliza un único desplazamiento para todas las letras del mensaje, Vigenère aplica un desplazamiento diferente para cada letra, determinado por la clave. Así, si la clave es "CLAVE", entonces la primera letra del mensaje se cifra con el desplazamiento de ‘C’, la segunda con ‘L’, la tercera con ‘A’, y así sucesivamente, repitiendo la clave tantas veces como sea necesario para cubrir todo el mensaje.
+
+Formalmente, si se representa el alfabeto como un conjunto de letras indexadas del 0 al 25, el cifrado se realiza sumando el índice de la letra del mensaje con el índice de la letra de la clave (modulo 26). Es decir, si M es el texto en claro, K es la clave y C es el texto cifrado, entonces:  
+Cᵢ = (Mᵢ + Kᵢ) mod 26
+
+El descifrado, en cambio, consiste en restar el valor de la letra de la clave al de la letra cifrada, también módulo 26:  
+Mᵢ = (Cᵢ - Kᵢ + 26) mod 26
+
+Un ejemplo concreto de uso podría ser el siguiente. Supongamos que queremos cifrar el texto “ATAQUEALAMANECER” con la clave “SOL”. Expandimos la clave: SOLSOLSOLSOLSO, y aplicamos la suma de índices letra por letra. El resultado sería un texto completamente ilegible para alguien que no conozca la clave.
+
+A lo largo del tiempo, muchos criptoanalistas intentaron romper este cifrado. Fue Charles Babbage quien logró romperlo a mediados del siglo XIX, aunque el crédito se le atribuye usualmente a Friedrich Kasiski, quien publicó el método conocido como el "examen de Kasiski" o "prueba de Kasiski". Este método permite descubrir la longitud de la clave encontrando patrones repetidos en el texto cifrado y analizando las distancias entre ellos.
+
+Una vez conocida la longitud de la clave, el cifrado puede dividirse en varios cifrados César independientes, lo que hace posible un análisis de frecuencia clásico para descifrar el mensaje. Esta vulnerabilidad ilustra que incluso los cifrados considerados seguros pueden ser derrotados con tiempo, herramientas adecuadas y suficiente ingenio.
+
+En la actualidad, el cifrado Vigenère no se utiliza en aplicaciones modernas debido a su vulnerabilidad ante análisis de frecuencia. Sin embargo, sigue siendo un excelente ejemplo pedagógico para enseñar los fundamentos de la criptografía, la seguridad por oscuridad, y los riesgos de utilizar claves repetitivas.
+
+A pesar de su antigüedad, el cifrado Vigenère sigue apareciendo en acertijos criptográficos, juegos de escape, y por supuesto, en retos de CTF, donde se convierte en una herramienta educativa ideal para introducir a los jugadores en el mundo de la criptografía clásica. Además, su mecánica puede combinarse con otros métodos como cifras homofónicas, transposiciones o técnicas modernas de ocultamiento para aumentar su dificultad y aplicabilidad en desafíos creativos.
