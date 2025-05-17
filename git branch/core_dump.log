@@ -1,0 +1,4 @@
+[ERROR] 0x1fe3a: segmentation fault at memory 0x4b1c0de
+[INFO] process exited with status 139
+[DEBUG] register dump:
+EAX=G  EBX=I  ECX=S  EDX=A  (¿curioso?)
